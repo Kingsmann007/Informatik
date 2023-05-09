@@ -219,7 +219,7 @@ class Main { public static void main(String[] args){
 	public static void a14(){
 		System.out.println("3x+1");
 		Scanner eingabewert = new Scanner(System.in);
-		a = eingabewert.nextInt();
+		int a = eingabewert.nextInt();
 		eingabewert.close();
 		while(a>=2){
 			if(a%2==0){
