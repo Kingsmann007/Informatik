@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.GraphicsEnvironment;
 import java.awt.event.*;
 import java.awt.Color;
 import java.lang.Math;
@@ -164,139 +165,143 @@ public class Bank{
 		bank.addBankAccount("Manfred Reimund Schmidtberger");
 		bank.addBankAccount("Louis Samuel Krasnek");
 		bank.addBankAccount("Alexander Schmidtberger");
-		bank.printBankAccounts();
+		//bank.printBankAccounts();
 		//GUI ist ausgeklammert(auf REPLIT funktioniert das!!!)
-		/*JFrame g =new JFrame("Bank Interface");
-		JFrame h =new JFrame("Bank Interface");
-		JFrame f =new JFrame("Bank Interface");  
-    //textfields
-		//output
-		JTextField tf=new JTextField("");  
-    tf.setBounds(50, 300, 400,20);  
-    //input
-		//name
-		JTextField name=new JTextField("name1");  
-    name.setBounds(50, 50, 400,20);
-		JTextField name2=new JTextField("name2");  
-    name2.setBounds(50, 145, 400,20);
-		JTextField amount=new JTextField(); 
-		amount.setBounds(50, 205, 400,20);
-		JTextField newName=new JTextField(); 
-		newName.setBounds(50, 50, 400,20);
-		//buttons
-		//namejava BAn
-		JButton trans=new JButton("Add new Account");
-		trans.setBounds(50,50,200,30);  
-  	trans.addActionListener(new ActionListener(){  
-    	public void actionPerformed(ActionEvent e){  
-				f.setVisible(false);
-				g.setVisible(false);
-				h.setVisible(true);
-    	}  
-    });
-		JButton add=new JButton("Transfer");
-		add.setBounds(50,85,200,30);  
-  	add.addActionListener(new ActionListener(){  
-    	public void actionPerformed(ActionEvent e){  
-				f.setVisible(true);
-				g.setVisible(false);
-				h.setVisible(false);
-    	}  
-    });
-		JButton addAcc=new JButton("Add new Account");
-		addAcc.setBounds(100,85,200,30);  
-  	addAcc.addActionListener(new ActionListener(){  
-    	public void actionPerformed(ActionEvent e){  
-				bank.addBankAccount(newName.getText());
-    	}  
-    });
-		JButton back=new JButton("back");
-		back.setBounds(50,325,200,30);  
-  	back.addActionListener(new ActionListener(){  
-    	public void actionPerformed(ActionEvent e){  
-				f.setVisible(false);
-				g.setVisible(true);
-				h.setVisible(false);
-    	}  
-    });
-		JButton back2=new JButton("back");
-		back2.setBounds(50,325,200,30);  
-  	back2.addActionListener(new ActionListener(){  
-    	public void actionPerformed(ActionEvent e){  
-				f.setVisible(false);
-				g.setVisible(true);
-				h.setVisible(false);
-    	}  
-    });
-		JButton b=new JButton("Get Info");  
-    b.setBounds(50,170,110,30);  
-  	b.addActionListener(new ActionListener(){  
-    	public void actionPerformed(ActionEvent e){  
-				tf.setText(bank.printBankAccount(name2.getText()));
-    	}  
-    });
-		JButton delAcc=new JButton("Delete Account");  
-    delAcc.setBounds(170,170,110,30);  
-  	delAcc.addActionListener(new ActionListener(){  
-    	public void actionPerformed(ActionEvent e){  
-				tf.setText(bank.delBAcc(name2.getText()));
-    	}  
-    });
-		JButton c=new JButton("Get Info");  
-    c.setBounds(50,75,110,30);  
-  	c.addActionListener(new ActionListener(){  
-    	public void actionPerformed(ActionEvent e){  
-				tf.setText(bank.printBankAccount(name.getText()));
-    	}  
-    });
-		JButton delAcc2=new JButton("Delete Account");  
-    delAcc2.setBounds(170,75,110,30);  
-  	delAcc2.addActionListener(new ActionListener(){  
-    	public void actionPerformed(ActionEvent e){  
-				tf.setText(bank.delBAcc(name.getText()));
-    	}  
-    });
-		JButton transfer=new JButton("Transfer");
-		transfer.setBackground(Color.black);
-		transfer.setBounds(50,230,110,30);
-		transfer.addActionListener(new ActionListener(){  
-    	public void actionPerformed(ActionEvent e){  
-				tf.setText(bank.transferMoney(name.getText(), name2.getText(), (double)Integer.parseInt(amount.getText())));
-    	}  
-    });
-		//label
-		JLabel l1= new JLabel("Output:");
-		l1.setBounds(50, 265, 500, 30);
-		JLabel l3=new JLabel("To");
-		l3.setBounds(50, 110, 500, 30);
-		JLabel l2= new JLabel("Transfer money from");
-		l2.setBounds(50, 25, 500, 30);
+		if (!GraphicsEnvironment.isHeadless()) {
+			JFrame g = new JFrame("Bank Interface");
+			JFrame h =new JFrame("Bank Interface");
+			JFrame f =new JFrame("Bank Interface");  
+    		//textfields
+			//output
+			JTextField tf=new JTextField("");  
+    		tf.setBounds(50, 300, 400,20);  
+    		//input
+			//name
+			JTextField name=new JTextField("name1");  
+    		name.setBounds(50, 50, 400,20);
+			JTextField name2=new JTextField("name2");  
+    		name2.setBounds(50, 145, 400,20);
+			JTextField amount=new JTextField(); 
+			amount.setBounds(50, 205, 400,20);
+			JTextField newName=new JTextField(); 
+			newName.setBounds(50, 50, 400,20);
+			//buttons
+			//namejava BAn
+			JButton trans=new JButton("Add new Account");
+			trans.setBounds(50,50,200,30);  
+  			trans.addActionListener(new ActionListener(){  
+    			public void actionPerformed(ActionEvent e){  
+					f.setVisible(false);
+					g.setVisible(false);
+					h.setVisible(true);
+    			}	  
+    		});
+			JButton add=new JButton("Transfer");
+			add.setBounds(50,85,200,30);  
+  			add.addActionListener(new ActionListener(){  
+    			public void actionPerformed(ActionEvent e){  
+						f.setVisible(true);
+						g.setVisible(false);
+						h.setVisible(false);
+    			}  
+    		});
+			JButton addAcc=new JButton("Add new Account");
+			addAcc.setBounds(100,85,200,30);  
+  			addAcc.addActionListener(new ActionListener(){  
+    			public void actionPerformed(ActionEvent e){  
+					bank.addBankAccount(newName.getText());
+    			}  
+    		});
+			JButton back=new JButton("back");
+			back.setBounds(50,325,200,30);  
+  			back.addActionListener(new ActionListener(){  
+    			public void actionPerformed(ActionEvent e){  
+					f.setVisible(false);
+					g.setVisible(true);
+					h.setVisible(false);
+    			}  
+    		});
+			JButton back2=new JButton("back");
+			back2.setBounds(50,325,200,30);  
+  			back2.addActionListener(new ActionListener(){  
+    			public void actionPerformed(ActionEvent e){  
+					f.setVisible(false);
+					g.setVisible(true);
+					h.setVisible(false);
+    			}  
+    		});
+			JButton b=new JButton("Get Info");  
+    		b.setBounds(50,170,110,30);  
+  			b.addActionListener(new ActionListener(){  
+    			public void actionPerformed(ActionEvent e){  
+					tf.setText(bank.printBankAccount(name2.getText()));
+    			}  
+    		});
+			JButton delAcc=new JButton("Delete Account");  
+    		delAcc.setBounds(170,170,110,30);  
+  			delAcc.addActionListener(new ActionListener(){  
+    			public void actionPerformed(ActionEvent e){  
+					tf.setText(bank.delBAcc(name2.getText()));
+    			}  
+    		});
+			JButton c=new JButton("Get Info");  
+    		c.setBounds(50,75,110,30);  
+  			c.addActionListener(new ActionListener(){  
+    			public void actionPerformed(ActionEvent e){  
+					tf.setText(bank.printBankAccount(name.getText()));
+    			}  
+    		});
+			JButton delAcc2=new JButton("Delete Account");  
+    		delAcc2.setBounds(170,75,110,30);  
+  			delAcc2.addActionListener(new ActionListener(){  
+    			public void actionPerformed(ActionEvent e){  
+					tf.setText(bank.delBAcc(name.getText()));
+    			}  
+    		});
+			JButton transfer=new JButton("Transfer");
+			transfer.setBackground(Color.black);
+			transfer.setBounds(50,230,110,30);
+			transfer.addActionListener(new ActionListener(){  
+    			public void actionPerformed(ActionEvent e){  
+					tf.setText(bank.transferMoney(name.getText(), name2.getText(), (double)Integer.parseInt(amount.getText())));
+    			}  
+    		});
+			//label
+			JLabel l1= new JLabel("Output:");
+			l1.setBounds(50, 265, 500, 30);
+			JLabel l3=new JLabel("To");
+			l3.setBounds(50, 110, 500, 30);
+			JLabel l2= new JLabel("Transfer money from");
+			l2.setBounds(50, 25, 500, 30);
 
-		f.add(transfer);
-		f.add(l1);
-		f.add(l2);
-		f.add(l3);
-		f.add(b);
-		f.add(delAcc);
-		f.add(c);
-		f.add(delAcc2);
-		f.add(tf);
-		f.add(name);
-		f.add(name2);
-		f.add(amount);
-		f.add(back);
-    f.setSize(500,500);  
-    f.setLayout(null); 
-		g.add(add);
-		g.add(trans);
-		g.setSize(280,300);
-		g.setLayout(null); 
-    g.setVisible(true);
-		h.add(back2);
-		h.add(addAcc);
-		h.add(newName);
-		h.setSize(500,500);
-		h.setLayout(null); 
-    h.setVisible(false);*/
+			f.add(transfer);
+			f.add(l1);
+			f.add(l2);
+			f.add(l3);
+			f.add(b);
+			f.add(delAcc);
+			f.add(c);
+			f.add(delAcc2);
+			f.add(tf);
+			f.add(name);
+			f.add(name2);
+			f.add(amount);
+			f.add(back);
+    		f.setSize(500,500);  
+    		f.setLayout(null); 
+			g.add(add);
+			g.add(trans);
+			g.setSize(280,300);
+			g.setLayout(null); 
+    		g.setVisible(true);
+			h.add(back2);
+			h.add(addAcc);
+			h.add(newName);
+			h.setSize(500,500);
+			h.setLayout(null); 
+    		h.setVisible(false);
+		}else{
+			System.out.println("Your environment does not support the use of a keyboard, display, or mouse.");
+		}
 	}
 }
