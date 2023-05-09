@@ -164,8 +164,9 @@ public class Bank{
 		bank.addBankAccount("Manfred Reimund Schmidtberger");
 		bank.addBankAccount("Louis Samuel Krasnek");
 		bank.addBankAccount("Alexander Schmidtberger");
-		//frame
-		JFrame g =new JFrame("Bank Interface");
+		bank.printBankAccounts();
+		//GUI ist ausgeklammert(auf REPLIT funktioniert das!!!)
+		/*JFrame g =new JFrame("Bank Interface");
 		JFrame h =new JFrame("Bank Interface");
 		JFrame f =new JFrame("Bank Interface");  
     //textfields
@@ -296,12 +297,6 @@ public class Bank{
 		h.add(newName);
 		h.setSize(500,500);
 		h.setLayout(null); 
-    h.setVisible(false);
-	}
-	public BankAccount[] getBankAccounts() {
-		return bankAccounts;
-	}
-	public void setBankAccounts(BankAccount[] bankAccounts) {
-		this.bankAccounts = bankAccounts;
+    h.setVisible(false);*/
 	}
 }
