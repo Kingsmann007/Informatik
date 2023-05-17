@@ -5,9 +5,11 @@ public class Hospital{
   private String name;
   private Address address;
   private Patient[] patients = new Patient[1500];
+  private Comparator[] comparators = new Comparator[100];
 public Hospital(String name,Address address){
     this.name=name;
     this.address=address;
+    this.initComparators();
   }
   public Address getAddress() {
 	 return address;
@@ -34,31 +36,34 @@ public Hospital(String name,Address address){
     
   }
   public void showPatients(){
-    Arrays.sort(patients, new Comparator<Patient>(){
-     public int compare(Patient o, Patient p){
-      if(o==null){
-        if(p != null) return 1;
-        return 0;
-      }
-      if(p==null){
-        if(o != null) return 1;
-      }
-      int a=Integer.valueOf(o.getAge()).compareTo(p.getAge());
-       
-        if(a!=0) return a;
-        if(o.getLName()==null){
-          if(p.getLName()!=null) return -1;
-          if(p.getLName()==null) return 0;
-        }
-        if(o.getLName()==null) return 0;
-        return o.getLName().compareTo(p.getLName());
-      } 
-    });
+    Arrays.sort(patients, comparators[0]);
     for(int i=0;i<patients.length;i++){
       if(patients[i]!=null){
         System.out.println(patients[i]);
       }
     }
+  }
+  public void initComparators(){
+    comparators[0] = new Comparator<Patient>(){
+      public int compare(Patient o, Patient p){
+       if(o==null){
+         if(p != null) return 1;
+         return 0;
+       }
+       if(p==null){
+         if(o != null) return 1;
+       }
+       int a=Integer.valueOf(o.getAge()).compareTo(p.getAge());
+        
+         if(a!=0) return a;
+         if(o.getLName()==null){
+           if(p.getLName()!=null) return -1;
+           if(p.getLName()==null) return 0;
+         }
+         if(o.getLName()==null) return 0;
+         return o.getLName().compareTo(p.getLName());
+       } 
+     };
   }
   public static void main(String[] args) {
     Address a =new Address("a","a","a","a");
