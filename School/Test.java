@@ -1,9 +1,9 @@
-public class Person{
+public class Test{
 	protected String name;
 	protected String lastName;
 	protected int age;
 	protected char sex;
-	public Person(String name,	String lastName, int age, char sex){
+	public Test(String name,	String lastName, int age, char sex){
 		this.name =name;
 		this.lastName=lastName;
 		this.age=age;

@@ -2,44 +2,11 @@ import java.util.Date;
 import java.util.Comparator;
 public class Patient extends Person implements Comparator<Patient>{
   protected Date admDate;
-  public Patient(String fName, String lName, int age, char sex){
-    this.fName=fName;
-    this.lName=lName;
-    this.age=age;
-    this.sex=sex;     
+  public Patient(String fName, String lName, int age, char sex, Date d){
+    super(fName, lName, age, sex);
+    this.admDate=d;
   }
-  
-  public String getFName() {
-	return fName;
-}
-
-public void setFName(String fName) {
-	this.fName = fName;
-}
-public String getLName() {
-	return lName;
-}
-
-public void setLName(String lName) {
-	this.lName = lName;
-}
-
-public int getAge() {
-	return age;
-}
-
-public void setAge(int age) {
-	this.age = age;
-}
-
-public char getSex() {
-	return sex;
-}
-
-public void setSex(char sex) {
-	this.sex = sex;
-}
-
+    
 public Date getAdmDate() {
 	return admDate;
 }
@@ -65,7 +32,8 @@ public int compare(Patient o, Patient p){
     if(o.getLName()==null) return 0;
     return o.getLName().compareTo(p.getLName());
   }
+  @Override
   public String toString(){
-    return fName+", " + lName+", "+age +", "+ sex+", "+admDate ;
+    return super.toString()+", " +admDate ;
   }
 }

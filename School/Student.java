@@ -1,4 +1,4 @@
-public class Student extends Person{
+public class Student extends Test{
 	private String favGame;
 	public Student(String name,	String lastName, int age, char sex, String favGame){
 		super(name, lastName, age, sex);

@@ -1,14 +1,14 @@
 public class School {
-  private Person[] persons = new Person[2000];
+  private Test[] persons = new Test[2000];
 
   public School() {
 
   }
 
-  public void addPerson(Person p) {
+  public void addPerson(Test p) {
     for (int i = 0; i < persons.length; i++) {
       if (persons[i] == null) {
-        Person person = p;
+        Test person = p;
         persons[i] = person;
         return;
       }
@@ -139,7 +139,7 @@ public class School {
     }
   }
 
-  public void rmPerson(Person p) {
+  public void rmPerson(Test p) {
     for (int i = 0; i < persons.length; i++) {
       if(persons[i]!=null){
         if (persons[i].equals(p)) {

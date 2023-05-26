@@ -29,7 +29,9 @@ public Hospital(String name,Address address){
   public void addPatient(Patient  p){
     for(int i=0;i<patients.length;i++){
       if(patients[i]==null){
-        p.setAdmDate(new Date());
+        if(p.getAdmDate()==null){
+          p.setAdmDate(new Date());
+        }
         patients[i]=p;
         return;
       }
@@ -106,12 +108,13 @@ public Hospital(String name,Address address){
   public static void main(String[] args) {
     Address a =new Address("a","a","a","a");
     Hospital h=new Hospital("lol",a);
-    h.addPatient(new Patient("k","jw",5,'e'));
-    h.addPatient(new Patient("s","jf",4,'d'));
-    h.addPatient(new Patient("g","jh",3,'c'));
-    h.addPatient(new Patient("a","jj",3,'b'));
-    h.addPatient(new Patient("a","jj",3,'a'));
-    
+    //Date d = new GregorianCalendar(2035, 8,  1, 15, 3);
+    h.addPatient(new CovPatient("Alexander", "Schmidtberger", 15, /*ja bitte*/ 'm', null, 100, false));
+    h.addPatient(new Patient("k","jw",5,'e', null  ));
+    h.addPatient(new Patient("s","jf",4,'d', null));
+    h.addPatient(new Patient("g","jh",3,'c', null));
+    h.addPatient(new Patient("a","jj",3,'b', null));
+    h.addPatient(new Patient("a","jj",3,'a', null));
     h.showPatients(1);
   }   
 }

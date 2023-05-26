@@ -1,4 +1,4 @@
-public class Teacher extends Person{
+public class Teacher extends Test{
 	private String sub1;
 	private String sub2;
 	public Teacher(String name,	String lastName, int age, char sex, String sub1, String sub2){
