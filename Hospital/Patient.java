@@ -1,10 +1,6 @@
 import java.util.Date;
 import java.util.Comparator;
-public class Patient implements Comparator<Patient>{
-  protected String fName;
-  protected String lName;
-  protected int age;
-  protected char sex;
+public class Patient extends Person implements Comparator<Patient>{
   protected Date admDate;
   public Patient(String fName, String lName, int age, char sex){
     this.fName=fName;
